@@ -1,6 +1,8 @@
+import { ConfigProvider, Layout, Select, Space } from 'antd';
 import React, { useState } from 'react';
-import { Layout, Space, ConfigProvider } from 'antd';
+
 import CustomContent from './CustomContent';
+
 const { Header, Footer, Sider, Content } = Layout;
 
 
@@ -49,13 +51,22 @@ function App() {
     <Layout>
       <Header style={headerStyle}>
         <div>
-          <img src="https://www.thesparksfoundationsingapore.org/images/logo_small.png" alt="logo" style={{
+          <img src="./wci.png" alt="logo" style={{
             position: 'absolute',
             left: '100px',
             top: '7px',
             width: '75px',
             height: '50px',
-          }} />
+            }} />
+            <Select
+              defaultValue="en"
+              style={{ width: 120 }}
+              onChange={(value) => setLocale(value)}
+              options={[
+                { label: 'English', value: 'en' },
+                { label: 'French', value: 'fr' },
+              ]}
+            />
           
 
         </div>
