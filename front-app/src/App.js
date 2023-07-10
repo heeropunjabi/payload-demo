@@ -1,9 +1,9 @@
-import { ConfigProvider, Layout, Select, Space } from 'antd';
+import { ConfigProvider, Layout, Select } from 'antd';
 import React, { useState } from 'react';
 
 import CustomContent from './CustomContent';
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer,  Content } = Layout;
 
 
 
@@ -26,17 +26,17 @@ const contentStyle = {
   color: 'black',
   backgroundColor: 'white',
 };
-const siderStyle = {
-  textAlign: 'center',
-  lineHeight: '120px',
-  color: '#fff',
-  backgroundColor: '#3ba0e9',
-};
+
 const footerStyle = {
   textAlign: 'center',
   color: 'black',
-  backgroundColor: 'white',
+  backgroundColor: 'rgb(245, 245, 245)',
   borderTop: '1px solid rgba(0, 21, 41, 0.14)',
+  position: 'fixed',
+  left: 0,
+  bottom: 0,
+  width: '100%',
+  height: 64,
 };
 
 
@@ -58,6 +58,8 @@ function App() {
             width: '75px',
             height: '50px',
             }} />
+            Select Language: &nbsp;
+
             <Select
               defaultValue="en"
               style={{ width: 120 }}
@@ -65,13 +67,15 @@ function App() {
               options={[
                 { label: 'English', value: 'en' },
                 { label: 'French', value: 'fr' },
+                { label: 'Spanish', value: 'es'}
               ]}
             />
           
 
         </div>
       </Header>
-      <Content style={contentStyle}>
+        <Content style={contentStyle}>
+          
           <CustomContent locale={locale} />
       </Content>
       <Footer style={footerStyle}>Footer</Footer>

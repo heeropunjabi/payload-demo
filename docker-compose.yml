@@ -5,17 +5,17 @@ services:
   frontend:
     image: node:18-alpine
     ports:
-      - "4000:3000"
+      - "4000:4000"
     volumes:
-      - ./frontend-app:/home/node/app2
-      # - ./frontend-app/node_modules:/home/node/app2/node_modules
-    working_dir: /home/node/app2/
+      - ./front-app:/home/node/app
+      
+    working_dir: /home/node/app/
     command: sh -c "npm i && npm start"
     depends_on:
       - payload
-    # environment:
-    #   MONGODB_URI: mongodb://mongo:27017/payload
-    #   PORT: 3000
+    environment:
+      WATCHPACK_POLLING: true
+      PORT: 4000
     #   NODE_ENV: development
     #   PAYLOAD_SECRET: TESTING
 
@@ -25,7 +25,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/home/node/app
-      # - node_modules:/home/node/app/node_modules
+      - node_modules:/home/node/app/node_modules
     working_dir: /home/node/app/
     command: sh -c "yarn install && yarn dev"
     depends_on:
@@ -50,5 +50,5 @@ services:
 volumes:
   data:
   node_modules:
-  frontend-app:
+  front-app:
   

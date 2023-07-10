@@ -6,12 +6,14 @@ import Users from './collections/Users';
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',
+  
   admin: {
-    user: Users.slug,
+    // user: Users.slug,
+    //landingPage: LandingPage.slug,
   },
   collections: [
     LandingPage,
-    Users,
+   // Users,
     // Add Collections here
     // Examples,
   ],
@@ -19,6 +21,7 @@ export default buildConfig({
     locales: [
       'en',
       'fr',
+      'es',
     ],
     defaultLocale: 'en',
     fallback: false,

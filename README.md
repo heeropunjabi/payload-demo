@@ -1,14 +1,15 @@
 # payload-demo
 
-This project was created using create-payload-app using the blank template.
 
-## How to Use
 
-`yarn dev` will start up your application and reload on any changes.
-
-### Docker
+### How to run locally using Docker
 
 If you have docker and docker-compose installed, you can run `docker-compose up`
+
+Once docker compose is up and running u can start changing the code on the payload cms 
+
+payload cms URL: http://localhost:3000/admin
+Frontend APP URL: http://localhost:4000/
 
 To build the docker image, run `docker build -t my-tag .`
 

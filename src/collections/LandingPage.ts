@@ -2,12 +2,20 @@ import { CollectionConfig } from 'payload/types';
 
 const LandingPage: CollectionConfig = {
   slug: 'landingPage',
-  auth: true,
+  //auth: true,
   admin: {
     //useAsTitle: 'email',
     defaultColumns: ['label', 'defaultEnglishLabel', 'displayed', 'description', 'page'],
       
-  },
+    },
+    access: {
+        read: () => true,
+        create: () => true,
+        update: () => true,
+        delete: () => true,
+
+
+    },
     
     fields: [{
         name: 'label',
